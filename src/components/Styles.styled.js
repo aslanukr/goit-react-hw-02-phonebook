@@ -37,6 +37,8 @@ export const Form = styled.form`
   max-width: 500px;
   margin-top: 30px;
   font-size: 20px;
+
+  user-select: none;
 `;
 
 export const FormLabel = styled.label`
@@ -98,7 +100,7 @@ export const Wrapper = styled.div`
 
 export const SectionTitle = styled.h2`
   display: block;
-
+  user-select: none;
   font-size: 30px;
   font-weight: 600;
   color: rgba(66, 137, 254, 255);
@@ -108,7 +110,7 @@ export const FilterInput = styled.input`
   font-size: 18px;
   margin-left: auto;
   padding: 2px 2px;
-
+  user-select: none;
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(66, 137, 254, 255);
