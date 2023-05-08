@@ -3,6 +3,14 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
+import phoneIcon from '../images/phone-icon.png';
+import {
+  Container,
+  Header,
+  Icon,
+  SectionTitle,
+  Wrapper,
+} from './Styles.styled';
 
 export class App extends Component {
   state = {
@@ -63,16 +71,22 @@ export class App extends Component {
     const filteredContacts = this.getFilteredContacts();
 
     return (
-      <div>
-        <h1>Phonebook</h1>
+      <Container>
+        <Header>
+          <Icon src={phoneIcon} alt="phone icon" />
+          <h1>Phonebook</h1>
+        </Header>
+
         <ContactForm onSubmit={this.addContact} />
-        <h2>Contacts</h2>
-        <Filter filter={filter} onChange={this.filterHandler} />
+        <Wrapper>
+          <SectionTitle>Contacts</SectionTitle>
+          <Filter filter={filter} onChange={this.filterHandler} />
+        </Wrapper>
         <ContactList
           contactsArray={filteredContacts}
           deleteContact={this.deleteContact}
         />
-      </div>
+      </Container>
     );
   }
 }

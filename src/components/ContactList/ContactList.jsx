@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import { ListItem } from './ListItem';
+import { List } from 'components/Styles.styled';
 
 export const ContactList = ({ contactsArray, deleteContact }) => {
   return (
     <>
-      <ul>
+      <List>
         <ListItem filteredContacts={contactsArray} deleteItem={deleteContact} />
-      </ul>
+      </List>
     </>
   );
 };

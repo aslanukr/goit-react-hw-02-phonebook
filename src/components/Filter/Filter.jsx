@@ -1,11 +1,15 @@
+import { FilterInput } from 'components/Styles.styled';
 import PropTypes from 'prop-types';
 
 export const Filter = ({ filter, onChange }) => {
   return (
-    <>
-      <p>Find contacts by name</p>
-      <input type="text" name="filter" value={filter} onChange={onChange} />
-    </>
+    <FilterInput
+      type="text"
+      name="filter"
+      placeholder="Search contacts by name"
+      value={filter}
+      onChange={onChange}
+    />
   );
 };
 

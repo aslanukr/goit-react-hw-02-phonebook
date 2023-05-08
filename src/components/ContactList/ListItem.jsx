@@ -1,3 +1,5 @@
+import { BiTrash, BiPhoneCall } from 'react-icons/bi';
+import { ContactItem, DeleteBtn, PhoneWrapper } from 'components/Styles.styled';
 import PropTypes from 'prop-types';
 
 export const ListItem = ({ filteredContacts, deleteItem }) => {
@@ -5,19 +7,23 @@ export const ListItem = ({ filteredContacts, deleteItem }) => {
     <>
       {filteredContacts.length ? (
         filteredContacts.map(({ id, name, number }) => (
-          <li key={id}>
-            {name}: {number}
+          <ContactItem key={id}>
+            {name}
+            <PhoneWrapper>
+              <BiPhoneCall color="rgba(66, 137, 254, 255)" />
+              {number}
+            </PhoneWrapper>
             <div>
-              <button
+              <DeleteBtn
                 type="button"
                 name="delete"
                 value={id}
                 onClick={() => deleteItem(id)}
               >
-                Delete
-              </button>
+                <BiTrash size="25px" />
+              </DeleteBtn>
             </div>
-          </li>
+          </ContactItem>
         ))
       ) : (
         <p>No contacts</p>
