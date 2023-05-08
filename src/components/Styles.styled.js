@@ -7,15 +7,20 @@ export const Container = styled.div`
   color: #010101;
 `;
 
-export const Header = styled.div`
+export const Logo = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 600;
+  user-select: none;
   color: rgba(66, 137, 254, 255);
   text-shadow: 1px 2px 3px #063970;
+
+  @media screen and (min-width: 568px) {
+    font-size: 50px;
+  }
 `;
 
 export const Icon = styled.img`
@@ -100,7 +105,7 @@ export const SectionTitle = styled.h2`
 `;
 
 export const FilterInput = styled.input`
-  font-size: 20px;
+  font-size: 18px;
   margin-left: auto;
   padding: 2px 2px;
 
@@ -110,6 +115,10 @@ export const FilterInput = styled.input`
   &:hover,
   &:focus {
     border-bottom: 3px solid rgba(66, 137, 254, 255);
+  }
+
+  @media screen and (min-width: 568px) {
+    font-size: 20px;
   }
 `;
 
@@ -122,7 +131,6 @@ export const List = styled.ul`
   margin: 0 auto;
   max-width: 700px;
   margin-top: 30px;
-  font-size: 30px;
 `;
 
 export const ContactItem = styled.li`
@@ -132,8 +140,10 @@ export const ContactItem = styled.li`
   gap: 20px;
   align-items: center;
   margin: 0 auto;
-
-  font-size: 25px;
+  font-size: 15px;
+  @media screen and (min-width: 568px) {
+    font-size: 25px;
+  }
 `;
 
 export const DeleteBtn = styled.button`
@@ -141,10 +151,10 @@ export const DeleteBtn = styled.button`
   font-size: 15px;
 
   color: tomato;
-  padding: 10px 10px;
+  padding: 7px 7px;
   background-color: #ffffff;
   border-radius: 10px;
-  border: 3px solid tomato;
+  border: 1px solid tomato;
   scale: 1;
   transition: background-color, scale 250ms ease-in;
 
@@ -155,11 +165,20 @@ export const DeleteBtn = styled.button`
     scale: 1.01;
     box-shadow: 1px 1px 3px #063970;
   }
+
+  @media screen and (min-width: 568px) {
+    border: 2px solid tomato;
+    padding: 10px 10px;
+  }
 `;
 
-export const PhoneWrapper = styled.span`
+export const PhoneWrapper = styled.a`
   margin-left: auto;
   display: flex;
   gap: 5px;
   align-items: center;
+`;
+
+export const Info = styled.p`
+  font-size: 25px;
 `;

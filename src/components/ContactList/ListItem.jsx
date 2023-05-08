@@ -1,6 +1,12 @@
-import { BiTrash, BiPhoneCall } from 'react-icons/bi';
-import { ContactItem, DeleteBtn, PhoneWrapper } from 'components/Styles.styled';
 import PropTypes from 'prop-types';
+import { BiTrash, BiPhoneCall } from 'react-icons/bi';
+import Notiflix from 'notiflix';
+import {
+  ContactItem,
+  DeleteBtn,
+  Info,
+  PhoneWrapper,
+} from 'components/Styles.styled';
 
 export const ListItem = ({ filteredContacts, deleteItem }) => {
   return (
@@ -9,7 +15,7 @@ export const ListItem = ({ filteredContacts, deleteItem }) => {
         filteredContacts.map(({ id, name, number }) => (
           <ContactItem key={id}>
             {name}
-            <PhoneWrapper>
+            <PhoneWrapper href={`tel:${number}`}>
               <BiPhoneCall color="rgba(66, 137, 254, 255)" />
               {number}
             </PhoneWrapper>
@@ -20,13 +26,16 @@ export const ListItem = ({ filteredContacts, deleteItem }) => {
                 value={id}
                 onClick={() => deleteItem(id)}
               >
-                <BiTrash size="25px" />
+                <BiTrash size="20px" />
               </DeleteBtn>
             </div>
           </ContactItem>
         ))
       ) : (
-        <p>No contacts</p>
+        <>
+          {Notiflix.Notify.info('No contacts found')}
+          <Info>No contacts</Info>
+        </>
       )}
     </>
   );
