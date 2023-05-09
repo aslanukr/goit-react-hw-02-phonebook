@@ -55,13 +55,15 @@ export const Input = styled.input`
 
   font-size: 20px;
   font-weight: 600;
-  padding: 10px 10px;
+  padding: 5px 5px;
 
   outline: none;
   border: none;
   border-bottom: 1px solid rgba(66, 137, 254, 255);
   &:hover,
   &:focus {
+    margin: -2px;
+    border: 3px solid transparent;
     border-bottom: 3px solid rgba(66, 137, 254, 255);
   }
 `;
@@ -116,6 +118,7 @@ export const FilterInput = styled.input`
   border-bottom: 1px solid rgba(66, 137, 254, 255);
   &:hover,
   &:focus {
+    margin-bottom: -2px;
     border-bottom: 3px solid rgba(66, 137, 254, 255);
   }
 
