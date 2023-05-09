@@ -154,27 +154,9 @@ export const ContactItem = styled.li`
 export const DeleteBtn = styled.button`
   max-width: 100px;
   font-size: 15px;
-
-  color: tomato;
-  padding: 7px 7px;
+  color: red;
   background-color: #ffffff;
-  border-radius: 10px;
-  border: 1px solid tomato;
-  scale: 1;
-  transition: background-color, scale 250ms ease-in;
-
-  &:hover,
-  &:focus {
-    background-color: tomato;
-    color: white;
-    scale: 1.01;
-    box-shadow: 1px 1px 3px #063970;
-  }
-
-  @media screen and (min-width: 568px) {
-    border: 2px solid tomato;
-    padding: 10px 10px;
-  }
+  border: none;
 `;
 
 export const PhoneWrapper = styled.a`
